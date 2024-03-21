@@ -33,7 +33,7 @@ export interface ValidationOptions {
   /**
    * While using transformFunction if provided then the transformFunction will be called with this.
    */
-  transformKey?: string
+  transformKey?: string;
 }
 
 export function isValidationOptions(val: any): val is ValidationOptions {

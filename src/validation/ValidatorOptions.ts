@@ -75,7 +75,7 @@ export interface ValidatorOptions {
      * @param key the name of the error.
      * @returns string. it will be shown instead of the default error message.
      */
-    transformFunction?: (key: string) => string
+    transformFunction?: (key: string) => string;
   };
 
   /**

@@ -1,38 +1,38 @@
-import { Type } from "class-transformer";
-import { IsArray, IsEnum, IsObject, IsOptional, IsString, ValidateNested } from "class-validator-custom-errors";
+import { Type } from 'class-transformer';
+import { IsArray, IsEnum, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator-custom-errors';
 
 export enum HttpProtocols {
-  http = "http",
-  https = "https",
-  ws = "ws",
-  wss = "wss",
-  ftp = "ftp"
+  http = 'http',
+  https = 'https',
+  ws = 'ws',
+  wss = 'wss',
+  ftp = 'ftp',
 }
 
 export class Query {
   @IsString()
-  search!: string
+  search!: string;
 
   @IsArray()
   @IsOptional()
   @ValidateNested()
-  select: string[] = []
+  select: string[] = [];
 }
 
 export class Url {
   @IsString({
-    transformKey: 'uniqueString'
+    transformKey: 'uniqueString',
   })
-  host!: string
+  host!: string;
 
   @IsEnum(HttpProtocols)
-  protocol!: string
+  protocol!: string;
 
   @IsString()
-  tld!: string
+  tld!: string;
 
   @IsObject()
   @ValidateNested()
   @Type(() => Query)
-  query!: Query
+  query!: Query;
 }

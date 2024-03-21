@@ -47,7 +47,7 @@ export class ValidationMetadata {
   /**
    * While using transformFunction to customize error messages the transformFunction will be called with this key.
    */
-  transformKey?: string
+  transformKey?: string;
   /**
    * Validation groups used for this validation.
    */

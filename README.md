@@ -80,7 +80,7 @@ validate(post, {
     //pass a transform function to overwrite the default implementation for this validation only
     transformFunction: (key: string) => `I was called with ${key}`,
   },
-}).then((errors) => {
+}).then(errors => {
   // errors is an array of validation errors
   if (errors.length > 0) {
     console.log('validation failed. errors: ', errors);
@@ -94,23 +94,20 @@ validateOrReject(post, {
     //pass a transform function to overwrite the default implementation for this validation only
     transformFunction: (key: string) => `I was called with ${key}`,
   },
-}).catch((errors) => {
+}).catch(errors => {
   console.log('Promise rejected (validation failed). Errors: ', errors);
 });
 // or
 async function validateOrRejectExample(input: any) {
   try {
-    await validateOrReject(input,{
+    await validateOrReject(input, {
       validationError: {
         //pass a transform function to overwrite the default implementation for this validation only
         transformFunction: (key: string) => `I was called with ${key}`,
       },
     });
   } catch (errors) {
-    console.log(
-      'Caught promise rejection (validation failed). Errors: ',
-      errors
-    );
+    console.log('Caught promise rejection (validation failed). Errors: ', errors);
   }
 }
 ```
@@ -257,6 +254,7 @@ import app from './server'
   console.log('responseFrench: ', JSON.stringify(responseFrench.json(), null, 2))
 })()
 ```
+
 See this for more of the basic [class-validator documentation](https://github.com/typestack/class-validator)
 
 ## Validation decorators
@@ -384,5 +382,3 @@ See this for more of the basic [class-validator documentation](https://github.co
 
 Take a look on samples in [./sample](https://github.com/arizworld/class-validator-custom-errors/tree/develop/sample) for more examples of
 usages.
-
-
