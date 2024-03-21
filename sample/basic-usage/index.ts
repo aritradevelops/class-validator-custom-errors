@@ -1,15 +1,4 @@
-import {
-  validate,
-  validateOrReject,
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-} from '../../src';
+import { validate, validateOrReject, Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max } from '../../src';
 
 export class Post {
   @Length(10, 20)
@@ -47,7 +36,7 @@ validate(post, {
     //pass a transform function to overwrite the default implemention for this validation only
     transformFunction: (key: string) => `I was called with ${key}`,
   },
-}).then((errors) => {
+}).then(errors => {
   // errors is an array of validation errors
   if (errors.length > 0) {
     console.log('validation failed. errors: ', errors);
@@ -61,7 +50,7 @@ validateOrReject(post, {
     //pass a transform function to overwrite the default implemention for this validation only
     transformFunction: (key: string) => `I was called with ${key}`,
   },
-}).catch((errors) => {
+}).catch(errors => {
   console.log('Promise rejected (validation failed). Errors: ', errors);
 });
 // or
@@ -74,9 +63,6 @@ async function validateOrRejectExample(input: any) {
       },
     });
   } catch (errors) {
-    console.log(
-      'Caught promise rejection (validation failed). Errors: ',
-      errors
-    );
+    console.log('Caught promise rejection (validation failed). Errors: ', errors);
   }
 }
