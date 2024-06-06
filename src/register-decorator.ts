@@ -7,6 +7,7 @@ import { ValidationArguments } from './validation/ValidationArguments';
 import { getFromContainer } from './container';
 import { MetadataStorage, getMetadataStorage } from './metadata/MetadataStorage';
 import { ValidationOptions } from './decorator/ValidationOptions';
+import { ValidatorOptions } from './validation/ValidatorOptions';
 
 export interface ValidationDecoratorOptions {
   /**
@@ -59,8 +60,12 @@ export function registerDecorator(options: ValidationDecoratorOptions): void {
   } else {
     const validator = options.validator;
     constraintCls = class CustomConstraint implements ValidatorConstraintInterface {
-      validate(value: any, validationArguments?: ValidationArguments): Promise<boolean> | boolean {
-        return validator.validate(value, validationArguments);
+      validate(
+        value: any,
+        validationArguments?: ValidationArguments,
+        validatorOptions?: ValidatorOptions
+      ): Promise<boolean> | boolean {
+        return validator.validate(value, validationArguments, validatorOptions);
       }
 
       defaultMessage(validationArguments?: ValidationArguments): string {
