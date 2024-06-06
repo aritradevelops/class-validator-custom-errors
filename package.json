@@ -1,6 +1,6 @@
 {
   "name": "class-validator-custom-errors",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Decorator-based property validation for classes with the ability to customize the error messages.",
   "author": "Aritra Sadhukhan",
   "license": "MIT",
