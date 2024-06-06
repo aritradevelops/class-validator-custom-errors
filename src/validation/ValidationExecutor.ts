@@ -30,7 +30,7 @@ export class ValidationExecutor {
   // Constructor
   // -------------------------------------------------------------------------
 
-  constructor(private validator: Validator, private validatorOptions?: ValidatorOptions) { }
+  constructor(private validator: Validator, private validatorOptions?: ValidatorOptions) {}
 
   // -------------------------------------------------------------------------
   // Public Methods
@@ -46,8 +46,8 @@ export class ValidationExecutor {
     if (!this.metadataStorage.hasValidationMetaData && this.validatorOptions?.enableDebugMessages === true) {
       console.warn(
         `No validation metadata found. No validation will be  performed. There are multiple possible reasons:\n` +
-        `  - There may be multiple class-validator versions installed. You will need to flatten your dependencies to fix the issue.\n` +
-        `  - This validation runs before any file with validation decorator was parsed by NodeJS.`
+          `  - There may be multiple class-validator versions installed. You will need to flatten your dependencies to fix the issue.\n` +
+          `  - This validation runs before any file with validation decorator was parsed by NodeJS.`
       );
     }
 
@@ -76,9 +76,9 @@ export class ValidationExecutor {
         e.message = () =>
           (this.validatorOptions?.validationError?.transformFunction as Function)(
             e.transformKey ||
-            e.name ||
-            e.type ||
-            'This validation does not have an name or type associated with it, please add one.'
+              e.name ||
+              e.type ||
+              'This validation does not have an name or type associated with it, please add one.'
           );
       });
       Object.keys(groupedMetadatas).forEach(prop => {
@@ -86,9 +86,9 @@ export class ValidationExecutor {
           e.message = () =>
             (this.validatorOptions?.validationError?.transformFunction as Function)(
               e.transformKey ||
-              e.name ||
-              e.type ||
-              'This validation does not have an name or type associated with it, please add one.'
+                e.name ||
+                e.type ||
+                'This validation does not have an name or type associated with it, please add one.'
             );
         });
       });
@@ -295,7 +295,11 @@ export class ValidationExecutor {
         };
 
         if (!metadata.each || !(Array.isArray(value) || value instanceof Set || value instanceof Map)) {
-          const validatedValue = customConstraintMetadata.instance.validate(value, validationArguments, this.validatorOptions);
+          const validatedValue = customConstraintMetadata.instance.validate(
+            value,
+            validationArguments,
+            this.validatorOptions
+          );
           if (isPromise(validatedValue)) {
             const promise = validatedValue.then(isValid => {
               if (!isValid) {

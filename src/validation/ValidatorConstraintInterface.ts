@@ -7,7 +7,11 @@ export interface ValidatorConstraintInterface {
   /**
    * Method to be called to perform custom validation over given value.
    */
-  validate(value: any, validationArguments?: ValidationArguments, validatorOptions?: ValidatorOptions): Promise<boolean> | boolean;
+  validate(
+    value: any,
+    validationArguments?: ValidationArguments,
+    validatorOptions?: ValidatorOptions
+  ): Promise<boolean> | boolean;
 
   /**
    * Gets default message when validation for this constraint fail.
