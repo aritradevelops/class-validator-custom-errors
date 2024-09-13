@@ -2,7 +2,7 @@
 
 _This changelog follows the [keep a changelog][keep-a-changelog]_ format to maintain a human readable changelog.
 
-### [0.0.1](https://github.com/arizworld/class-validator-custom-errors/pull/1/) (2024-03-21)
+### [0.0.1](https://github.com/aritradeevelops/class-validator-custom-errors/pull/1/) (2024-03-21)
 
 ### Added
 

@@ -11,7 +11,7 @@
   "typings": "./types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arizworld/class-validator-custom-errors"
+    "url": "https://github.com/aritradevelops/class-validator-custom-errors"
   },
   "tags": [
     "validator",

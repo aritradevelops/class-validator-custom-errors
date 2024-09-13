@@ -1,6 +1,6 @@
 # class-validator-custom-errors
 
-![Build Status](https://github.com/arizworld/class-validator-custom-errors/workflows/CI/badge.svg)
+![Build Status](https://github.com/aritradevelops/class-validator-custom-errors/workflows/CI/badge.svg)
 [![npm version](https://badge.fury.io/js/class-validator-custom-errors.svg)](https://badge.fury.io/js/class-validator-custom-errors)
 [![install size](https://packagephobia.now.sh/badge?p=class-validator-custom-errors)](https://packagephobia.com/result?p=class-validator-custom-errors)
 
@@ -114,9 +114,9 @@ async function validateOrRejectExample(input: any) {
 
 Implementing internationalization with i18next:
 
-Full code can be found in [stackblitz playground](https://stackblitz.com/~/github.com/arizworld/class-validator-custom-errors-i18next)
+Full code can be found in [stackblitz playground](https://stackblitz.com/~/github.com/aritradevelops/class-validator-custom-errors-i18next)
 
-Or clone it from here [github class-validator-custom-errors-i18next](https://github.com/arizworld/class-validator-custom-errors-i18next)
+Or clone it from here [github class-validator-custom-errors-i18next](https://github.com/aritradevelops/class-validator-custom-errors-i18next)
 
 ```typescript
 // locales/en/translation.json
@@ -380,5 +380,5 @@ See this for more of the basic [class-validator documentation](https://github.co
 
 ## Samples
 
-Take a look on samples in [./sample](https://github.com/arizworld/class-validator-custom-errors/tree/develop/sample) for more examples of
+Take a look on samples in [./sample](https://github.com/aritradevelops/class-validator-custom-errors/tree/develop/sample) for more examples of
 usages.
